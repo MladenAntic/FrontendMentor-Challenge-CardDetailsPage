@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Card Details Form</title>
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img src="images/bg-main-desktop.png" alt="Main Background Desktop" />
+
+    <main id="main-container">
+      <div class="card">
+        <div class="card-front">
+          <div class="circles">
+            <div class="circle-big"></div>
+            <div class="circle-small"></div>
+          </div>
+          <p class="numbers">0000 0000 0000 0000</p>
+          <div class="name">
+            <h3 class="person">Jane Applessed</h3>
+            <div class="expiry-date">
+              <h3 class="expiry-month">00</h3>/   
+              <h3 class="expiry-year">00</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-back">
+          <h3 class="security-code">000</h3>
+        </div>
+      </div>
+
+      <form>
+        <label for="name">Cardholder Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="e.g. Jane Applessed"
+          oninput="preventSpace(this)"
+          minlength="5"
+          maxlength="25"
+          required
+        />
+        <p class="input-error-message">Your name must be between 5 and 25 characters!</p>
+
+        <label for="card-number">Card Number</label>
+        <input
+          type="text"
+          id="card-number"
+          placeholder="e.g. 1234 5678 9123 0000"
+          maxlength="19"
+          required
+        />
+        <p class="input-error-message">Your card number can't have less than 16 digits!</p>
+
+        <div class="wrapper">
+          <div class="exp-date">
+            <label for="expiry-date">Exp. Date (MM/YY)</label>
+            <div class="exp-date-inputs">
+              <input
+                type="text"
+                id="expiry-date"
+                class="month"
+                placeholder="MM"
+                maxlength="2"
+                required
+              />
+              <input
+                type="text"
+                id="expiry-date"
+                class="year"
+                placeholder="YY"
+                maxlength="2"
+                required
+              />
+            </div>
+            <p class="input-error-message">Can't be blank!</p>
+          </div>
+
+          <div class="security-code-input">
+            <label for="security-code">CVC</label>
+            <input
+              type="text"
+              id="security-code"
+              placeholder="e.g. 123"
+              maxlength="3"
+              required
+            />
+            <p class="input-error-message">Can't be blank!</p>
+          </div>
+        </div>
+
+        <button type="submit" id="submit">Confirm</button>
+      </form>
+    </main>
+
+    <section class="thank-you">
+      <img
+        src="images/icon-complete.svg"
+        class="completed"
+        alt="Icon Complete"
+      />
+      <h2>Thank You!</h2>
+      <p>We've added your card details!</p>
+
+      <button class="continue">Continue</button>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
